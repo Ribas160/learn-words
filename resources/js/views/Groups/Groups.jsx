@@ -68,7 +68,7 @@ const WritingGroups = () => {
     ];
 
     const onButtonClick = () => {
-        setFormOpen(!formOpen);
+        setFormOpen(true);
     }
 
     const onFormClose = () => {

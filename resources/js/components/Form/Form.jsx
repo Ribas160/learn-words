@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import "./Form.css";
 
-const Form = ({ open, fields, buttonText, onSubmit, onClose }) => {
+const Form = ({ fields, buttonText, onSubmit, onClose }) => {
 
     const closeForm = (e) => {
         if (e.target.classList.contains("formBg")) {
@@ -23,7 +23,7 @@ const Form = ({ open, fields, buttonText, onSubmit, onClose }) => {
     }
     
     return (
-        <div className="formBg" style={{display: (open ? "block" : "none")}} onClick={closeForm}>
+        <div className="formBg" onClick={closeForm}>
             <form className="form" onSubmit={submit}>
                 {fields.map((field, i) => (
                     <input 
@@ -48,12 +48,10 @@ const Form = ({ open, fields, buttonText, onSubmit, onClose }) => {
 }
 
 Form.defaultProps = {
-    open: false,
     buttonText: "Submit",
 }
 
 Form.propTypes = {
-    open: PropTypes.bool,
     fields: PropTypes.array.isRequired,
     buttonText: PropTypes.string,
 }

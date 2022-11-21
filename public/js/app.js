@@ -4156,8 +4156,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Form = function Form(_ref) {
-  var open = _ref.open,
-    fields = _ref.fields,
+  var fields = _ref.fields,
     buttonText = _ref.buttonText,
     onSubmit = _ref.onSubmit,
     onClose = _ref.onClose;
@@ -4176,9 +4175,6 @@ var Form = function Form(_ref) {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "formBg",
-    style: {
-      display: open ? "block" : "none"
-    },
     onClick: closeForm,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
       className: "form",
@@ -4203,11 +4199,9 @@ var Form = function Form(_ref) {
   });
 };
 Form.defaultProps = {
-  open: false,
   buttonText: "Submit"
 };
 Form.propTypes = {
-  open: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool),
   fields: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().array.isRequired),
   buttonText: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
 };
@@ -4466,7 +4460,7 @@ var SignIn = function SignIn() {
           type: "submit",
           children: "Submit"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-          to: "/signUp",
+          to: "/sign-up",
           className: "auth__form__link--small",
           children: "Not registered?"
         })]
@@ -5054,7 +5048,7 @@ var WritingGroups = function WritingGroups() {
     autocomplete: "off"
   }];
   var onButtonClick = function onButtonClick() {
-    setFormOpen(!formOpen);
+    setFormOpen(true);
   };
   var onFormClose = function onFormClose() {
     setFormOpen(false);

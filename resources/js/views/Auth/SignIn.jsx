@@ -87,7 +87,7 @@ const SignIn = () => {
                     <button type="submit">
                         Submit
                     </button>
-                    <Link to="/signUp" className="auth__form__link--small">Not registered?</Link>
+                    <Link to="/sign-up" className="auth__form__link--small">Not registered?</Link>
                 </form>
             </main>
         </>
