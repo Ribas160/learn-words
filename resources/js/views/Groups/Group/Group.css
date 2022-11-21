@@ -1,0 +1,68 @@
+.group ul {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.group li {
+    list-style-type: none;
+}
+
+li {
+    margin-top: 5rem;
+    padding: 10rem 12rem;
+    display: flex;
+    font-size: 18rem;
+    background: #fff;
+    border-radius: 10rem;
+}
+
+li:first-of-type {
+    margin-top: 0;
+}
+
+.group__langs {
+    width: 80%;
+}
+
+.group__langs--lang1 {
+    position: relative;
+    padding-bottom: 10rem;
+    display: block;
+}
+
+.group__langs--lang1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    background: var(--primary-bg);
+}
+
+.group__langs--lang2 {
+    padding-top: 10rem;
+    display: block;
+}
+
+.group__action {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.group__action img {
+    height: 22rem;
+    fill: #99999998;
+}
+
+.group--fileInput {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+}

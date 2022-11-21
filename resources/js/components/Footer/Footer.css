@@ -1,0 +1,28 @@
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.footer--icon {
+    margin-right: 10rem;
+    height: 30rem;
+}
+
+.footer--icon:hover {
+    cursor: pointer;
+}
+
+.footer--icon:last-of-type {
+    margin-right: 0;
+}
+
+.footer--icon img {
+    height: 100%;
+}

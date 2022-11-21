@@ -1,0 +1,27 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.header h1 {
+    font-size: 20rem;
+}
+
+.header--arrow--back {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10rem;
+    height: 20rem;
+}
+
+.header--arrow--back img {
+    height: 100%;
+}

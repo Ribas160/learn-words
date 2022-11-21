@@ -1,0 +1,69 @@
+:root {
+	font-size: 0.3125vw;
+
+	--primary-bg: #efefef;
+	--error: #dc3545;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: var(--primary-bg);
+}
+
+input, input::placeholder, button {
+	font-family: inherit;
+}
+
+button {
+	transition: all 0.2s ease;
+}
+
+button:hover {
+	cursor: pointer;
+	transform: scale(1.01);
+}
+
+#root {
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.wrapper {
+	position: absolute;
+	top: 45rem;
+	left: 0;
+	right: 0;
+	width: 100%;
+	max-width: 700px;
+	height: calc(100% - 95rem);
+	padding: 10rem 0;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+
+@media (min-width: 700px) {
+	:root {
+		font-size: 2.1875px;
+	}
+}
+
+
+@media (orientation: landscape) and (max-height: 700px) {
+	:root {
+		font-size: 0.3125vh;
+	}
+}

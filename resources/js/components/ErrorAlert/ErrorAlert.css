@@ -1,0 +1,54 @@
+.errorAlert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 12rem 20rem;
+    font-size: 16rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 4rem;
+    z-index: 2;
+}
+
+.errorAlert--close {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    width: 15rem;
+    fill: #fff;
+}
+
+.errorAlert--close:hover {
+    cursor: pointer;
+}
+
+.errorAlert--fallDown {
+    animation: errorAlert--fallDowm 0.5s ease;
+}
+
+.errorAlert--fallUp {
+    animation: errorAlert--fallUp 0.5s ease;
+}
+
+@keyframes errorAlert--fallDowm {
+    0% {
+        top: -100rem;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes errorAlert--fallUp {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -100rem;
+    }
+}
