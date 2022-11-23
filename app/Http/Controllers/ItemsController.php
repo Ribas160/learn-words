@@ -24,6 +24,11 @@ class ItemsController extends Controller
         }
 
         $items = new Items();
+
+        if ($items->itemExists($fields['lang1'], $fields['lang2'])) {
+            return response()->json(['message' => "Current item already exists"], 409);
+        }
+
         $itemId = $items->createItem($request->listId, [
             'lang1' => $fields['lang1'], 
             'lang2' => $fields['lang2']
@@ -67,11 +72,13 @@ class ItemsController extends Controller
                 'lang2' => $fileData[1],
             ]);
     
-            if (!$itemId) {
+            if ($itemId === 0) {
                 return response()->json(['message' => ($key + 1) . " item has not been created"], 500);
             }
 
-            $itemsId[] = $itemId;
+            if ($itemId > 0) {
+                $itemsId[] = $itemId;
+            }
         }
 
         return response()->json(["ids" => $itemsId], 201);

@@ -79,6 +79,10 @@ const WritingWords = () => {
     const createCursor = (letters, value) => {
         hideCursor();
         
+        if (/[\u0591-\u07FF]/.test(word.lang2)) {
+            letters = [...letters].reverse();
+        }
+
         if (value.length < word.lang2.replace(/\s/, "").length) {
             letters[value.length].classList.add("spelling--cursor");
         }
@@ -142,6 +146,7 @@ const WritingWords = () => {
                             onFocus={spellingAction}
                             onBlur={hideCursor}
                             maxLength={word.lang2.length}
+                            autoComplete="off"
                         />
 
                         {[...word.lang2].map((el, i) => {

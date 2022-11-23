@@ -13,6 +13,10 @@ class Items extends Model
 
     public function createItem(int $listId, array $params): int
     {
+        if ($this->itemExists($params['lang1'], $params['lang2'])) {
+            return -1;
+        }
+
         DB::beginTransaction();
 
         try {
@@ -80,5 +84,19 @@ class Items extends Model
                             ->where("items.id", $itemId)
                             ->where("users_lists.user_id", $userId)
                             ->delete();
+    }
+
+
+    public function itemExists(string $lang1, string $lang2): bool 
+    {
+        $result = DB::table("items")
+                    ->join("lists_items", "items.id", "lists_items.item_id")
+                    ->join("users_lists", "lists_items.list_id", "users_lists.list_id")
+                    ->select("items.*")
+                    ->where("items.lang1", $lang1)
+                    ->where("items.lang2", $lang2)
+                    ->first();
+
+        return $result !== null;
     }
 }

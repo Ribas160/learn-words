@@ -141,4 +141,26 @@ class ItemsTest extends TestCase
         $this->assertEquals(1, $result);
         $this->assertNull($item);
     }
+
+
+    public function testItemExists(): void 
+    {
+        $user = User::factory()->create();
+
+        $lists = new Lists();
+        $newListId = $lists->createList($user->id, $this->faker()->title());
+
+        $lang1 = $this->faker()->word();
+        $lang2 = $this->faker()->word();
+
+        $items = new Items();
+        $items->createItem($newListId, [
+            "lang1" => $lang1, 
+            "lang2" => $lang2,
+        ]);
+
+        $result = $items->itemExists($lang1, $lang2);
+
+        $this->assertTrue($result);
+    }
 }

@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
 // import List from "../../components/List/List";
 import Tiles from "../../components/Tiles/Tiles";
+import { listsApi } from "../../api/api";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -13,6 +15,15 @@ const Home = () => {
             title: 'Writing',
         }
     ];
+
+    useEffect(() => {
+        listsApi.getAllLists()
+                    .then(res => {
+                        if (res.status === 403) {
+                            navigate("/sign-in");
+                        }
+                    })
+    }, []);
 
     const onItemClick = (item) => {
         navigate(item.path);

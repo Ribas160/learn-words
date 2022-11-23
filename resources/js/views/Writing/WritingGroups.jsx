@@ -39,6 +39,11 @@ const WritingGroups = () => {
             })
             .then(res => res.json())
             .then(groups => {
+
+                if (groups.length === 0) {
+                    navigate("/groups");
+                }
+
                 setWordGroups(groups);
             })
             .catch(error => {

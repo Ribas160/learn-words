@@ -54,7 +54,7 @@ const SignIn = () => {
             .then(res => {
                 if (res.token) {
                     tokenApi.setToken(res.token);
-                    navigate("/");
+                    window.location.href = process.env.MIX_REACT_APP_BASE_URL;
 
                 } else if (res.message !== undefined) {
                     setEmailErr(res.message);
